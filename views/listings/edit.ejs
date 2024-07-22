@@ -1,36 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<% layout('/layouts/boilerplate') -%>
 <body>
     <h3>Edit your Listing</h3>
     <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
-      <input name="listing[title]" value="<%= listing.title %>" type="text" />
-      <br /><br />
-      <textarea name="listing[description]">
-<%= listing.description %></textarea
-      >
-      <br /><br />
-      <input name="listing[image]" value="<%= listing.image %>" type="text" />
-      <br /><br />
-      <input name="listing[price]" value="<%= listing.price %>" type="number" />
-      <br /><br />
+
+
+    <div>
+      <label for="title" class="form-label">Title</label>
+      <input class="form-control" name="listing[title]" value="<%= listing.title %>" type="text" />
+    </div>
+
+    <div>
+      <label for="Description" class="form-label">Description</label>
+      <textarea class="form-control" name="listing[description]"><%= listing.description %></textarea>
+    </div>
+
+    <div>
+      <label for="Image" class="form-label">Image</label>
+      <input class="form-control" name="listing[image]" value="<%= listing.image %>" type="text" />
+    </div>
+
+    <div>
+      <label for="Price" class="form-label">Price</label>
+      <input class="form-control" name="listing[price]" value="<%= listing.price %>" type="number" />
+    </div>
+
+    <div>
+      <label for="Country" class="form-label">Country</label>
       <input
+        class="form-control"
         name="listing[country]"
         value="<%= listing.country %>"
         type="text"
       />
-      <br /><br />
+    </div>
+
+    <div>
+      <label for="Location" class="form-label">Location</label>
       <input
+        class="form-control"
         name="listing[location]"
         value="<%= listing.location %>"
         type="text"
       />
-      <br /><br />
-      <button>Edit</button>
+    </div>
+    <br></br>
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Confirm Edit</button>
+    </div>
+
     </form>
 </body>
-</html>
