@@ -72,3 +72,10 @@ background-color: whitesmoke;
     opacity: 0.2;
     background-color:white;
 }
+.boxx{
+            display: inline-block;
+            width: 48%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 1%;
+}
