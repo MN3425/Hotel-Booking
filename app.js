@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
+const { errorMonitor } = require("stream");
 
 
 const MONGO_URL ="mongodb://127.0.0.1:27017/wanderlust";
@@ -78,6 +79,7 @@ app.all("*",(req, res, next)=>{
 //middleware
 app.use((err,req,res,next)=>{
     let{statusCode =500, message="some error"}= err;
+    res.render("error.ejs",{err});
     res.status(statusCode).send(message);
 });
 
