@@ -8,7 +8,9 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+//const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = "mongodb+srv://<pacificnano>:<H7M1sE3fzS4MiZjr>@cluster.mongodb.net/<wanderlust>?retryWrites=true&w=majority";
+
 
 main()
   .then(() => {
